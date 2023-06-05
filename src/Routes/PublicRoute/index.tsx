@@ -12,5 +12,9 @@ export const PublicRoute = ({ children }: Props) => {
   const { authState } = useContext(AuthContext);
   const { logged } = authState;
 
-  return !logged ? <div>{children}</div> : <Navigate to="/admin" />;
+  return !logged ? (
+    <div className="main">{children}</div>
+  ) : (
+    <Navigate to="/admin" />
+  );
 };
